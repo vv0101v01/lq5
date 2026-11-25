@@ -299,7 +299,7 @@ log 軸、空表格四個退化情形，已併入 `verify.sh` 第 6 步。
 1. **`.gitignore` 把整個 repo 排除**。舊檔尾有 18 行裸路徑（`README.md`、`docs`、`src`、`scripts`、
    `space`、`*.csv`、`moon.mod`…），`git add .` 實測只納入 **4 個檔案 / 1.9 KiB**，其餘全部被忽略。
    push 到 GitHub 會得到一個「幾乎空的 repo」。已重寫為只排除衍生物；現在 `git add .` 納入
-   **101 個檔案 / 2.4 MiB**（`_build/` 那 24 MiB 不再進版控）。
+   **102 個檔案 / 2.4 MiB**（`_build/` 那 24 MiB 不再進版控）。
 2. **報告徽章在說謊**。`docs/report.html` 寫著 `moon 0.1.20261104` / `moonc v0.10.20+65efd5b93` /
    `35 / 35 tests passed`，實際閘門是 `0.1.20261119` / `v0.10.22+124d61d05` / **135/135**；
    `report_frontier.html` 寫 `67 inline tests`、`report_universe.html` 寫 `82 inline tests`、

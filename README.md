@@ -438,7 +438,7 @@ Kottwitz 強乘積律僅對奇 d 成立、Clausen 傅立葉和不能以「項小
 * **`.gitignore` 曾把整個 repo 排除**：舊檔尾有 18 行裸路徑（`README.md`、`docs`、`src`、
   `scripts`、`space`、`*.csv`…），令 `git add .` 只加得到 4 個檔案（實測 4 個，共 1.9 KiB）。
   已重寫為只排除 `_build/`、`.mooncakes/`、`*.wasm`、`__pycache__/` 等衍生物；現在 `git add .`
-  納入 **101 個檔案 / 2.4 MiB**（`_build/` 的 24 MiB 不再進版控；最大的是 `space/data/agent_vecs_int8.npy`，
+  納入 **102 個檔案 / 2.4 MiB**（`_build/` 的 24 MiB 不再進版控；最大的是 `space/data/agent_vecs_int8.npy`，
   128×1024 int8 真模型向量）。
 * **CI**：`.github/workflows/ci.yml` 只有一個 `gate` job（`ubuntu-latest`，20 分鐘上限），
   `scripts/verify.sh` + `git diff --exit-code`（衍生檔案逐位元一致）+ 上傳報告與軌跡 artifact。
