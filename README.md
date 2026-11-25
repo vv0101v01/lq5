@@ -423,7 +423,7 @@ Kottwitz 強乘積律僅對奇 d 成立、Clausen 傅立葉和不能以「項小
 * **報告原語去重**：五支 `make_report_*.py` 各自複製過 `PALETTE`、`load()`、`line_chart()`、
   `bar_chart()`、`table()`（同一個函數有 3 種近乎相同的變體），共 668 行重複。現在統一由
   [`scripts/reporthtml.py`](scripts/reporthtml.py) 提供，`python3 scripts/reporthtml.py` 可自我測試
-  （空序列、零跨度、log 軸、空表格都不會炸）。行數 **1 924 → 1 256**（−35 %），行為只差在圖表幾何：
+  （空序列、零跨度、log 軸、空表格都不會炸）。行數 **1 924 → 1 226**（−36 %），行為只差在圖表幾何：
   合併後 `pad_t` 26→32、標題 `y` 18→20，**每一條折線的數據逐點相同**（已用腳本核對：多邊形點序一一對應、
   只差常數 y 平移；條形圖 `height` 逐點相同）。`docs/report*.html` 的變更是重生後的幾何，數據未動。
 * **Python 死碼與未用 import**：`dead_code_scan.py` 由「只掃 `src/**/*.mbt`」擴充成同時掃

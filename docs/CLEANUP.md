@@ -270,12 +270,12 @@ x-accepted-github-permissions: contents=write
 
 | 檔案 | 去重前 | 去重後 | 省 |
 | --- | --- | --- | --- |
-| `make_report_langlands.py` | 403 | 292 | −111 |
-| `make_report_universe.py` | 375 | 231 | −144 |
-| `make_report_octave.py` | 451 | 317 | −134 |
-| `make_report_correspondence.py` | 396 | 255 | −141 |
-| `make_report_frontier.py` | 299 | 161 | −138 |
-| **合計** | **1 924** | **1 256** | **−668**（−35 %） |
+| `make_report_langlands.py` | 403 | 290 | −113 |
+| `make_report_universe.py` | 375 | 228 | −147 |
+| `make_report_octave.py` | 451 | 300 | −151 |
+| `make_report_correspondence.py` | 396 | 250 | −146 |
+| `make_report_frontier.py` | 299 | 158 | −141 |
+| **合計** | **1 924** | **1 226** | **−698**（−36 %） |
 
 新增 `scripts/reporthtml.py`（約 280 行，含自我測試）提供 `PALETTE`、`load()`、`line_chart()`、
 `bar_chart()`、`table()`、`trace_path()`、`doc_path()`、`csv_rows()` 與工具鏈印章常數
