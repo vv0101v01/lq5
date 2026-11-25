@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<title>Round 4：格羅滕迪克宇宙層級 · 可判定保守反射 · 朗蘭茲綱領宇宙 · ℓ-進光滑層在 Diamond 上</title>
+<style>
+ body { font-family: -apple-system, "Segoe UI", "Noto Sans TC", sans-serif; margin: 0;
+        background: #f8fafc; color: #0f172a; line-height: 1.55; }
+ .wrap { max-width: 900px; margin: 0 auto; padding: 28px 20px 64px; }
+ h1 { font-size: 24px; margin: 0 0 4px; }
+ h2 { font-size: 18px; margin: 32px 0 10px; border-left: 4px solid #2563eb;
+       padding-left: 10px; }
+ .sub { color: #64748b; font-size: 13px; margin-bottom: 22px; }
+ p { font-size: 14px; }
+ code { background: #eef2ff; padding: 1px 5px; border-radius: 4px; font-size: 12.5px; }
+ table { border-collapse: collapse; width: 100%; font-size: 12.5px; margin: 10px 0 6px; }
+ th, td { border: 1px solid #e2e8f0; padding: 6px 8px; text-align: left; }
+ th { background: #e0e7ff; font-weight: 600; }
+ .cap { font-size: 11.5px; color: #64748b; margin-bottom: 14px; }
+ .cards { display: flex; flex-wrap: wrap; gap: 12px; margin: 14px 0 6px; }
+ .card { flex: 1 1 195px; background: #fff; border: 1px solid #e2e8f0;
+          border-radius: 10px; padding: 12px 14px; }
+ .card .k { font-size: 11px; color: #64748b; text-transform: uppercase;
+             letter-spacing: .04em; }
+ .card .v { font-size: 19px; font-weight: 650; margin-top: 2px; }
+ .fine { font-size: 11.5px; color: #64748b; }
+</style>
+</head>
+<body><div class="wrap">
+<h1>Round 4：宇宙、反射、朗蘭茲與 ℓ-進光滑層</h1>
+<div class="sub">MoonBit 0.10.22 (<code>moonc v0.10.22+124d61d05</code>) · 135 inline tests (whole gate)（wasm + js 全綠，0 warnings，0 死碼） · 由 <code>scripts/make_report_universe.py</code> 生成</div>
+
+<div class="cards">
+  <div class="card"><div class="k">Σ_n 反射界 β</div><div class="v">3 &lt; α = 4</div>
+      <div class="fine">保守消去：無需宇宙公理</div></div>
+  <div class="card"><div class="k">保守性缺陷</div><div class="v">0</div>
+      <div class="fine">0 = 反射判定與大宇宙真值完全一致</div></div>
+  <div class="card"><div class="k">excursion→參數缺陷</div><div class="v">3.55e-15</div>
+      <div class="fine">Newton 反演於雙精度下精確</div></div>
+  <div class="card"><div class="k">反射／對偶方塊缺陷</div><div class="v">9.77e-15</div>
+      <div class="fine">T46 交換性</div></div>
+</div>
+
+<h2>1. 四項新數學結構與其計算抽象</h2>
+<p>
+(1) <b>格羅滕迪克宇宙層級</b>：<code>U_j = V_{κ_j}</code>，<code>κ_0 = ω</code>、
+<code>κ_{j+1} = Next(κ_j)</code>（下一個不可達基數）。可判定性來自「hereditarily finite 集合 = 位元遮罩」的編碼：
+<code>x ∈ y</code> 只需一次位元測試，<code>P(x)</code> 是子遮罩列舉，於是一切閉包公理與
+<code>U_j ∉ U_j</code> 都成為有限計算。<br>
+(2) <b>可判定保守宇宙反射原理</b>：Montague–Lévy 反射在有限模型 <code>V_α</code>（α ≤ 4，|V_4| = 16）上被<b>窮舉驗證</b>：
+給定參數組 <code>p̄</code>，最小反射界 <code>β</code> 由搜尋得到，且 Δ₀ 時 <code>β = rank(p̄)+1</code>（絕對性），
+Σ_n（n ≥ 1）需要為見證留出空間而嚴格更大——這正是「保守」的內容：見證秩有界，宇宙公理可被消去。<br>
+(3) <b>朗蘭茲綱領宇宙</b>：以 beth 梯 <code>L_j</code> 分層，幾何側在層 1–2、譜側與導出 ∞-範疇在層 3；
+保守反射（層 3 → 層 0）由 excursion 算子特徵值 <code>p_k = tr φ(Frob)^k</code> 的 Newton 反演實現，
+其核恰為 unipotent radical（即 Fargues–Scholze 的 <code>φ_π^FS</code> 半單性）。<br>
+(4) <b>ℓ-進光滑層在 Diamond 上</b>：tilt <code>X^♭ = lim_{←,x↦x^p} O_X/p</code> 以 p 次根鏈實現，
+certify「char-p 剩餘完美、原代數非完美」；<code>Div¹</code> 的 deg ∈ ℝ/ℤ 為 Frob-不變；
+ℓ-進光滑性即 <code>f^!Λ ≅ Λ(d)[2d]</code>，配合 Verdier 對合、Poincaré 對偶回文與合成乘法性，
+含 <code>[*/G]</code>（d = −dim G）之負維數情形。
+</p>
+
+<h2>2. 朗蘭茲三元之宇宙分層</h2>
+<table><thead><tr><th>對象</th><th>側</th><th>基數</th><th>層級</th></tr></thead><tbody><tr><td>Kottwitz invariant / Hecke eigenvalue</td><td>automorphic</td><td>有限</td><td>0</td></tr><tr><td>Div¹ = Spd(Q̌_p)/Frob^ℤ</td><td>geometric</td><td>ω</td><td>1</td></tr><tr><td>Spd(Q_p) (perfectoid diamond)</td><td>geometric</td><td>ω</td><td>1</td></tr><tr><td>Bun_G (GL₂)</td><td>geometric</td><td>2^ω</td><td>2</td></tr><tr><td>Hck_G (Hecke stack)</td><td>geometric</td><td>2^ω</td><td>2</td></tr><tr><td>LocSys_Ĝ (spectral stack)</td><td>spectral</td><td>2^ω</td><td>2</td></tr><tr><td>D_lis(Bun_G,Λ) ≃ IndCoh_N(LocSys_Ĝ)</td><td>spectral</td><td>2^{2^ω}</td><td>3</td></tr></tbody></table><div class="cap">分層緊性由 <code>size_level</code> 逐項驗證：宣告層級 = 基數強制層級（T39）。</div>
+<svg viewBox="0 0 760 230" width="100%" role="img" aria-label="Langlands 三元的宇宙層級（有限 → ω → 2^ω → 2^{2^ω}）" style="background:#fff;border:1px solid #e2e8f0;border-radius:10px"><text x="58" y="18" font-size="13" font-weight="600" fill="#0f172a">Langlands 三元的宇宙層級（有限 → ω → 2^ω → 2^{2^ω}）</text><line x1="58" y1="30.0" x2="746" y2="30.0" stroke="#e2e8f0"/><text x="50" y="34.0" font-size="10" text-anchor="end" fill="#64748b">2.4</text><line x1="58" y1="69.0" x2="746" y2="69.0" stroke="#e2e8f0"/><text x="50" y="73.0" font-size="10" text-anchor="end" fill="#64748b">1.8</text><line x1="58" y1="108.0" x2="746" y2="108.0" stroke="#e2e8f0"/><text x="50" y="112.0" font-size="10" text-anchor="end" fill="#64748b">1.2</text><line x1="58" y1="147.0" x2="746" y2="147.0" stroke="#e2e8f0"/><text x="50" y="151.0" font-size="10" text-anchor="end" fill="#64748b">0.6</text><line x1="58" y1="186.0" x2="746" y2="186.0" stroke="#e2e8f0"/><text x="50" y="190.0" font-size="10" text-anchor="end" fill="#64748b">0</text><rect x="106.2" y="186.0" width="133.0" height="0.0" fill="#7c3aed" rx="4"/><text x="172.7" y="201" font-size="10" text-anchor="middle" fill="#64748b">L₀ ω</text><text x="172.7" y="181.0" font-size="10" text-anchor="middle" fill="#0f172a">0</text><rect x="335.5" y="121.0" width="133.0" height="65.0" fill="#7c3aed" rx="4"/><text x="402.0" y="201" font-size="10" text-anchor="middle" fill="#64748b">L₁ 2^ω</text><text x="402.0" y="116.0" font-size="10" text-anchor="middle" fill="#0f172a">1</text><rect x="564.8" y="56.0" width="133.0" height="130.0" fill="#7c3aed" rx="4"/><text x="631.3" y="201" font-size="10" text-anchor="middle" fill="#64748b">L₂ 3:2^{2^ω}</text><text x="631.3" y="51.0" font-size="10" text-anchor="middle" fill="#0f172a">2</text></svg>
+
+<h2>3. 可判定保守反射：β 隨 Σ_n 步進</h2>
+<p>每一步以不同 Σ-index 執行反射搜尋；<code>α = 4</code>、參數 <code>p̄ = (0,1)</code>。
+β 恆為 3 &lt; 4，且保守性缺陷恆為 0。</p>
+<svg viewBox="0 0 760 250" width="100%" role="img" aria-label="可判定保守反射：Σ_n 反射界 β < α = 4（步進改變 n）" style="background:#fff;border:1px solid #e2e8f0;border-radius:10px"><text x="58" y="20" font-size="13" font-weight="600" fill="#0f172a">可判定保守反射：Σ_n 反射界 β < α = 4（步進改變 n）</text><line x1="58" y1="32.0" x2="746" y2="32.0" stroke="#e2e8f0" stroke-width="1"/><text x="50" y="36.0" font-size="10" text-anchor="end" fill="#64748b">3</text><line x1="58" y1="78.0" x2="746" y2="78.0" stroke="#e2e8f0" stroke-width="1"/><text x="50" y="82.0" font-size="10" text-anchor="end" fill="#64748b">2.5</text><line x1="58" y1="124.0" x2="746" y2="124.0" stroke="#e2e8f0" stroke-width="1"/><text x="50" y="128.0" font-size="10" text-anchor="end" fill="#64748b">2</text><line x1="58" y1="170.0" x2="746" y2="170.0" stroke="#e2e8f0" stroke-width="1"/><text x="50" y="174.0" font-size="10" text-anchor="end" fill="#64748b">1.5</text><line x1="58" y1="216.0" x2="746" y2="216.0" stroke="#e2e8f0" stroke-width="1"/><text x="50" y="220.0" font-size="10" text-anchor="end" fill="#64748b">1</text><text x="14" y="124" font-size="10" fill="#64748b" transform="rotate(-90 14 124)" text-anchor="middle">level</text><polyline points="58.0,32.00 75.2,32.00 92.4,32.00 109.6,32.00 126.8,32.00 144.0,32.00 161.2,32.00 178.4,32.00 195.6,32.00 212.8,32.00 230.0,32.00 247.2,32.00 264.4,32.00 281.6,32.00 298.8,32.00 316.0,32.00 333.2,32.00 350.4,32.00 367.6,32.00 384.8,32.00 402.0,32.00 419.2,32.00 436.4,32.00 453.6,32.00 470.8,32.00 488.0,32.00 505.2,32.00 522.4,32.00 539.6,32.00 556.8,32.00 574.0,32.00 591.2,32.00 608.4,32.00 625.6,32.00 642.8,32.00 660.0,32.00 677.2,32.00 694.4,32.00 711.6,32.00 728.8,32.00 746.0,32.00" fill="none" stroke="#2563eb" stroke-width="2.1"/><polyline points="58.0,216.00 75.2,124.00 92.4,32.00 109.6,216.00 126.8,124.00 144.0,32.00 161.2,216.00 178.4,124.00 195.6,32.00 212.8,216.00 230.0,124.00 247.2,32.00 264.4,216.00 281.6,124.00 298.8,32.00 316.0,216.00 333.2,124.00 350.4,32.00 367.6,216.00 384.8,124.00 402.0,32.00 419.2,216.00 436.4,124.00 453.6,32.00 470.8,216.00 488.0,124.00 505.2,32.00 522.4,216.00 539.6,124.00 556.8,32.00 574.0,216.00 591.2,124.00 608.4,32.00 625.6,216.00 642.8,124.00 660.0,32.00 677.2,216.00 694.4,124.00 711.6,32.00 728.8,216.00 746.0,124.00" fill="none" stroke="#d97706" stroke-width="2.1"/><rect x="68" y="40" width="14" height="4" fill="#2563eb"/><text x="88" y="45" font-size="11" fill="#0f172a">reflection bound β (Σ_n)</text><rect x="266" y="40" width="14" height="4" fill="#d97706"/><text x="286" y="45" font-size="11" fill="#0f172a">Σ-index n</text><line x1="58" y1="216" x2="746" y2="216" stroke="#64748b"/><text x="58" y="232" font-size="10" text-anchor="middle" fill="#64748b">0</text><text x="144" y="232" font-size="10" text-anchor="middle" fill="#64748b">5</text><text x="230" y="232" font-size="10" text-anchor="middle" fill="#64748b">10</text><text x="316" y="232" font-size="10" text-anchor="middle" fill="#64748b">15</text><text x="402" y="232" font-size="10" text-anchor="middle" fill="#64748b">20</text><text x="488" y="232" font-size="10" text-anchor="middle" fill="#64748b">25</text><text x="574" y="232" font-size="10" text-anchor="middle" fill="#64748b">30</text><text x="660" y="232" font-size="10" text-anchor="middle" fill="#64748b">35</text><text x="746" y="232" font-size="10" text-anchor="middle" fill="#64748b">40</text></svg>
+
+<h2>4. 朗蘭茲反射（excursion → 半單參數）與 T46 對偶方塊</h2>
+<svg viewBox="0 0 760 250" width="100%" role="img" aria-label="朗蘭茲反射與 ℓ-進對偶之數值缺陷（log10，雙精度機器精度）" style="background:#fff;border:1px solid #e2e8f0;border-radius:10px"><text x="58" y="20" font-size="13" font-weight="600" fill="#0f172a">朗蘭茲反射與 ℓ-進對偶之數值缺陷（log10，雙精度機器精度）</text><line x1="58" y1="32.0" x2="746" y2="32.0" stroke="#e2e8f0" stroke-width="1"/><text x="50" y="36.0" font-size="10" text-anchor="end" fill="#64748b">1e-14</text><line x1="58" y1="78.0" x2="746" y2="78.0" stroke="#e2e8f0" stroke-width="1"/><text x="50" y="82.0" font-size="10" text-anchor="end" fill="#64748b">1e-14</text><line x1="58" y1="124.0" x2="746" y2="124.0" stroke="#e2e8f0" stroke-width="1"/><text x="50" y="128.0" font-size="10" text-anchor="end" fill="#64748b">1e-15</text><line x1="58" y1="170.0" x2="746" y2="170.0" stroke="#e2e8f0" stroke-width="1"/><text x="50" y="174.0" font-size="10" text-anchor="end" fill="#64748b">1e-15</text><line x1="58" y1="216.0" x2="746" y2="216.0" stroke="#e2e8f0" stroke-width="1"/><text x="50" y="220.0" font-size="10" text-anchor="end" fill="#64748b">1e-16</text><text x="14" y="124" font-size="10" fill="#64748b" transform="rotate(-90 14 124)" text-anchor="middle">log10 defect</text><polyline points="58.0,102.06 75.2,102.06 92.4,102.06 109.6,102.06 126.8,102.06 144.0,102.06 161.2,102.06 178.4,102.06 195.6,73.57 212.8,102.06 230.0,159.03 247.2,102.06 264.4,102.06 281.6,102.06 298.8,73.57 316.0,102.06 333.2,73.57 350.4,154.19 367.6,73.57 384.8,154.19 402.0,73.57 419.2,121.37 436.4,73.57 453.6,102.06 470.8,154.19 488.0,102.06 505.2,102.06 522.4,73.57 539.6,216.00 556.8,102.06 574.0,102.06 591.2,73.57 608.4,102.06 625.6,102.06 642.8,102.06 660.0,73.57 677.2,102.06 694.4,73.57 711.6,102.06 728.8,102.06 746.0,102.06" fill="none" stroke="#059669" stroke-width="2.1"/><polyline points="58.0,187.51 75.2,50.57 92.4,73.57 109.6,45.09 126.8,50.57 144.0,32.00 161.2,40.25 178.4,45.09 195.6,56.91 212.8,102.06 230.0,73.57 247.2,187.51 264.4,45.09 281.6,45.09 298.8,50.57 316.0,73.57 333.2,45.09 350.4,56.91 367.6,73.57 384.8,56.91 402.0,73.57 419.2,73.57 436.4,73.57 453.6,73.57 470.8,73.57 488.0,159.03 505.2,45.09 522.4,73.57 539.6,73.57 556.8,102.06 574.0,73.57 591.2,102.06 608.4,45.09 625.6,64.40 642.8,102.06 660.0,45.09 677.2,130.54 694.4,102.06 711.6,45.09 728.8,102.06 746.0,40.25" fill="none" stroke="#7c3aed" stroke-width="2.1"/><rect x="68" y="40" width="14" height="4" fill="#059669"/><text x="88" y="45" font-size="11" fill="#0f172a">excursion→parameter defect</text><rect x="280" y="40" width="14" height="4" fill="#7c3aed"/><text x="300" y="45" font-size="11" fill="#0f172a">reflection/duality defect</text><line x1="58" y1="216" x2="746" y2="216" stroke="#64748b"/><text x="58" y="232" font-size="10" text-anchor="middle" fill="#64748b">0</text><text x="144" y="232" font-size="10" text-anchor="middle" fill="#64748b">5</text><text x="230" y="232" font-size="10" text-anchor="middle" fill="#64748b">10</text><text x="316" y="232" font-size="10" text-anchor="middle" fill="#64748b">15</text><text x="402" y="232" font-size="10" text-anchor="middle" fill="#64748b">20</text><text x="488" y="232" font-size="10" text-anchor="middle" fill="#64748b">25</text><text x="574" y="232" font-size="10" text-anchor="middle" fill="#64748b">30</text><text x="660" y="232" font-size="10" text-anchor="middle" fill="#64748b">35</text><text x="746" y="232" font-size="10" text-anchor="middle" fill="#64748b">40</text></svg>
+
+<h2>5. ℓ-進光滑性：Λ(d)[2d] 的移次與負維數分類堆疊</h2>
+<svg viewBox="0 0 760 250" width="100%" role="img" aria-label="ℓ-進光滑性：對偶複形 Λ(d)[2d] 的移次 2d（含 d < 0 的 [*/G] 分類堆疊）" style="background:#fff;border:1px solid #e2e8f0;border-radius:10px"><text x="58" y="20" font-size="13" font-weight="600" fill="#0f172a">ℓ-進光滑性：對偶複形 Λ(d)[2d] 的移次 2d（含 d < 0 的 [*/G] 分類堆疊）</text><line x1="58" y1="32.0" x2="746" y2="32.0" stroke="#e2e8f0" stroke-width="1"/><text x="50" y="36.0" font-size="10" text-anchor="end" fill="#64748b">8</text><line x1="58" y1="78.0" x2="746" y2="78.0" stroke="#e2e8f0" stroke-width="1"/><text x="50" y="82.0" font-size="10" text-anchor="end" fill="#64748b">4</text><line x1="58" y1="124.0" x2="746" y2="124.0" stroke="#e2e8f0" stroke-width="1"/><text x="50" y="128.0" font-size="10" text-anchor="end" fill="#64748b">0</text><line x1="58" y1="170.0" x2="746" y2="170.0" stroke="#e2e8f0" stroke-width="1"/><text x="50" y="174.0" font-size="10" text-anchor="end" fill="#64748b">-4</text><line x1="58" y1="216.0" x2="746" y2="216.0" stroke="#e2e8f0" stroke-width="1"/><text x="50" y="220.0" font-size="10" text-anchor="end" fill="#64748b">-8</text><text x="14" y="124" font-size="10" fill="#64748b" transform="rotate(-90 14 124)" text-anchor="middle">2d</text><polyline points="58.0,216.00 75.2,193.00 92.4,170.00 109.6,147.00 126.8,124.00 144.0,101.00 161.2,78.00 178.4,55.00 195.6,32.00 212.8,216.00 230.0,193.00 247.2,170.00 264.4,147.00 281.6,124.00 298.8,101.00 316.0,78.00 333.2,55.00 350.4,32.00 367.6,216.00 384.8,193.00 402.0,170.00 419.2,147.00 436.4,124.00 453.6,101.00 470.8,78.00 488.0,55.00 505.2,32.00 522.4,216.00 539.6,193.00 556.8,170.00 574.0,147.00 591.2,124.00 608.4,101.00 625.6,78.00 642.8,55.00 660.0,32.00 677.2,216.00 694.4,193.00 711.6,170.00 728.8,147.00 746.0,124.00" fill="none" stroke="#dc2626" stroke-width="2.1"/><rect x="68" y="40" width="14" height="4" fill="#dc2626"/><text x="88" y="45" font-size="11" fill="#0f172a">dualizing shift 2d</text><line x1="58" y1="216" x2="746" y2="216" stroke="#64748b"/><text x="58" y="232" font-size="10" text-anchor="middle" fill="#64748b">0</text><text x="144" y="232" font-size="10" text-anchor="middle" fill="#64748b">5</text><text x="230" y="232" font-size="10" text-anchor="middle" fill="#64748b">10</text><text x="316" y="232" font-size="10" text-anchor="middle" fill="#64748b">15</text><text x="402" y="232" font-size="10" text-anchor="middle" fill="#64748b">20</text><text x="488" y="232" font-size="10" text-anchor="middle" fill="#64748b">25</text><text x="574" y="232" font-size="10" text-anchor="middle" fill="#64748b">30</text><text x="660" y="232" font-size="10" text-anchor="middle" fill="#64748b">35</text><text x="746" y="232" font-size="10" text-anchor="middle" fill="#64748b">40</text></svg>
+
+<h2>6. Newton 層與 lisse 層–光滑表示對應</h2>
+<table><thead><tr><th>Newton 層 b</th><th>斜率</th><th>J_b</th><th>dim J_b</th><th>basic</th></tr></thead><tbody><tr><td>b₀ (slope 0)</td><td>(0, 0)</td><td>GL₂</td><td>4</td><td>否</td></tr><tr><td>b_1/2 (basic)</td><td>(½, ½)</td><td>D^×</td><td>4</td><td>是</td></tr><tr><td>b₁ (slope 1)</td><td>(1, 1)</td><td>GL₂</td><td>4</td><td>否</td></tr></tbody></table><div class="cap">Bun_G^b ≃ [*/J_b(Q_p)]，其上 ℓ-進 lisse 秩 r 層 ↔ J_b(Q_p) 的 r 維光滑表示（T41）。</div>
+
+<h2>7. 導出定理 T35–T46</h2>
+<table><thead><tr><th>定理</th><th>主題</th><th>內容</th><th>模組</th></tr></thead><tbody><tr><td>T35</td><td>Groth. 層級</td><td>U_j ∈ U_{j+1}, U_j ∉ U_j（羅素／Burali-Forti 屏障）</td><td>21</td></tr><tr><td>T36</td><td>Groth. 層級</td><td>五條閉包公理：遞移、配對、冪集、並集、替換</td><td>21</td></tr><tr><td>T37</td><td>保守反射</td><td>Σ_n 反射實例：β = rank(p̄)+1 起，量化詞需嚴格更大 β < α</td><td>21</td></tr><tr><td>T38</td><td>保守反射</td><td>保守消去子是可靠的（defect = 0）且反射關係遞移</td><td>21</td></tr><tr><td>T39</td><td>朗蘭茲宇宙</td><td>三元分層嚴格遞增且緊（D_lis 比 LocSys 高一層）</td><td>22</td></tr><tr><td>T40</td><td>朗蘭茲反射</td><td>Newton 反演 = 半單 L-參數；核為 unipotent radical</td><td>22</td></tr><tr><td>T41</td><td>Newton 層</td><td>Bun_G^b ≃ [*/J_b]；lisse 秩 = 光滑表示維度；純性</td><td>22</td></tr><tr><td>T42</td><td>tilting</td><td>Frobenius 僅在 tilt 上可逆；|T_d| = p^n，char-p 剩餘完美</td><td>23</td></tr><tr><td>T43</td><td>Div¹ 鏡曲線</td><td>deg 為 Frob-不變；χ_{a+b} = χ_aχ_b；權重 2a</td><td>23</td></tr><tr><td>T44</td><td>ℓ-進光滑</td><td>Λ(d)[2d]、Verdier 對合、Poincaré 對偶、合成乘法性</td><td>23</td></tr><tr><td>T45</td><td>幾何 Satake</td><td>P_IC(Gr_λ)(1) = dim V_λ，移次 ⟨2ρ,λ⟩，q-回文</td><td>23</td></tr><tr><td>T46</td><td>綜合</td><td>反射與 Verdier 對偶之交換方塊：e_k(α⁻¹) = e_{r−k}(α)/e_r(α)</td><td>24</td></tr></tbody></table><div class="cap">全部定理由 `moon test --deny-warn`（wasm + js）鎖定；括號內為實作檔案編號。</div>
+
+<h2>8. 導出演算法 A29–A37</h2>
+<table><thead><tr><th>演算法</th><th>實作</th><th>用途</th></tr></thead><tbody><tr><td>A29</td><td>least_universe_containing</td><td>可判定宇宙層級判定器</td></tr><tr><td>A30</td><td>reflection_bound_for</td><td>參數相對 Σ_n 反射界搜尋</td></tr><tr><td>A31</td><td>decide_conservatively</td><td>無需宇宙公理的 Σ_n 判定程序</td></tr><tr><td>A32</td><td>size_level / category_universe_level</td><td>基數 → 宇宙層級（beth 梯）</td></tr><tr><td>A33</td><td>reflected_parameter</td><td>excursion 特徵值 → 半單 L-參數（Newton 恆等式）</td></tr><tr><td>A34</td><td>triad_is_tight</td><td>朗蘭茲三元的分層緊性憑證</td></tr><tr><td>A35</td><td>tilt_chains / tilt_is_perfect</td><td>tilt 鏈構造與完美性憑證</td></tr><tr><td>A36</td><td>coh_dualizing / coh_dual</td><td>六函子移次＋Tate 扭轉微積分</td></tr><tr><td>A37</td><td>satake_ic_match</td><td>IC 層 ↔ 表示之匹配</td></tr></tbody></table>
+
+<h2>9. 管線執行摘要</h2>
+<pre style="background:#0f172a;color:#e2e8f0;padding:14px;border-radius:10px;
+ overflow:auto;font-size:11.5px;line-height:1.45"># universe-emergence/ Grothendieck ladder × Langlands × ℓ-adic diamonds
+steps: 40, universe levels: 4
+T35-T36 Grothendieck hierarchy: U_j ∈ U_{j+1}, U_j ∉ U_j, 5 closure axioms  -> ok
+T37-T38 reflection: parameter-relative β(Σ_1) = 3, β(Σ_2) = 3, conservativity defect = 0 (0 = sound)
+T39-T40 Langlands universe: stratification tight = ok, max excursion->parameter defect = 3.552713678800501e-15
+T41 Newton strata: 3 strata of Bun_{GL_2}, basic J_b = D^×
+T42 tilt: |T_d| = p^n at every depth, perfect on the char-p residue -> ok
+T43-T44 Div^1 & ℓ-smoothness: dualizing Λ(d)[2d], Verdier involution, Poincaré duality -> ok
+T45 geometric Satake: P_IC(Gr_ω1)(1) = dim V_ω1 = 2
+T46 reflection/duality square commutes: max defect = 9.769962616701378e-15</pre>
+<div class="fine">完整資料見 <code>universe_trace.csv</code>（41 列，含 step 0）；tilt 鏈數恆為 8，
+分層欄位恆為 0（Kottwitz 不變量屬有限資料）。</div>
+</div></body></html>

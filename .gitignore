@@ -1,0 +1,14 @@
+# MoonBit build artefacts
+_build/
+.mooncakes/
+target/
+*.wasm
+*.wat
+.moon-locks/
+
+# local tooling / editor noise
+.moon/
+__pycache__/
+*.pyc
+*.tmp
+.DS_Store

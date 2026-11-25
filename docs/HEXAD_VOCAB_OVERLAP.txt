@@ -1,0 +1,35 @@
+== base vocab sizes ==
+K2      64000
+R1      151643
+Limite  151643
+Qwen35  248044
+LFM     64400
+
+== token-string overlap (byte-level strings) ==
+K2      ∩ R1      =   42986   (67.2% of K2, 28.3% of R1)
+K2      ∩ Limite  =   42986   (67.2% of K2, 28.3% of Limite)
+K2      ∩ Qwen35  =   50932   (79.6% of K2, 20.5% of Qwen35)
+K2      ∩ LFM     =   36549   (57.1% of K2, 56.8% of LFM)
+R1      ∩ Limite  =  151643   (100.0% of R1, 100.0% of Limite)
+R1      ∩ Qwen35  =  131586   (86.8% of R1, 53.0% of Qwen35)
+R1      ∩ LFM     =   47505   (31.3% of R1, 73.8% of LFM)
+Limite  ∩ Qwen35  =  131586   (86.8% of Limite, 53.0% of Qwen35)
+Limite  ∩ LFM     =   47505   (31.3% of Limite, 73.8% of LFM)
+Qwen35  ∩ LFM     =   55946   (22.6% of Qwen35, 86.9% of LFM)
+
+R1 vs Limite identical (string,id) pairs: 151643 / 151643
+
+== per-sequence alignment K2 vs R1 (same text) ==
+lang  | K2 tok | R1 tok | shared boundaries | identical tokens (same span)
+en    |     43 |     43 |            100.0% | 100.0% of R1 tokens
+math  |     46 |     48 |             88.0% | 81.2% of R1 tokens
+code  |     46 |     44 |             95.7% | 95.5% of R1 tokens
+zh    |     36 |     34 |             74.4% | 64.7% of R1 tokens
+yue   |     43 |     40 |             86.8% | 77.5% of R1 tokens
+
+== Qwen-tokenizer family check vs R1 (real tokenizer.json / config.json, 2026-11-24) ==
+model                          base vocab  identical (str,id) with R1   hidden x layers  arch
+Limite-1B-Violetto             151643      151643 / 151643              1280 x 48        LimiteForCausalLM
+Qwen2.5-Coder-1.5B-Instruct    151643      151643 / 151643              1536 x 28        Qwen2ForCausalLM (same shape as R1; tie_word_embeddings True vs False, rope_theta 1e6 vs 1e4)
+Qwen3-Embedding-0.6B           151643      151643 / 151643              1024 x 28        Qwen3 (1024-d embedding, 100+ languages, 32K ctx)
+Qwen3-0.6B                     151643      151643 / 151643              1024 x 28        Qwen3ForCausalLM

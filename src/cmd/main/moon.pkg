@@ -1,0 +1,5 @@
+import {
+  "arena/superemergence" @geo,
+}
+
+pkgtype(kind: "executable")

@@ -1,0 +1,92 @@
+name: gate
+
+# The whole quality gate in one job: formatting, warnings-as-errors type
+# checking, the 135-test suite on both backends (wasm and js), the executable
+# (seven pipelines, incl. the Hexad ring-vs-LFM-k-NN comparison and the
+# Round-7 ten-channel run), the exported CSV traces, all six HTML reports, the
+# MoonBit dead-code scan and the Python dead-code / unused-import scan.
+#
+# We also assert that everything the run produces is byte-identical to what is
+# committed: the traces and reports are *derived* artefacts, so a diff here
+# means a numeric result drifted, or the toolchain moved under us.  The report
+# header stamps the compiler it was generated with, so a failure after a new
+# MoonBit release names the new compiler in the diff itself — regenerate with
+# `./scripts/verify.sh` and commit the five changed files.
+#
+# No secrets, no network beyond the MoonBit installer checksum, no pip install:
+# every script is pure Python 3 stdlib.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: gate-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  # Channel of the MoonBit toolchain.  `latest` is the only channel the
+  # official CDN publishes binaries for (pinned release ids such as `v0.10.22`
+  # 404 on cli.moonbitlang.com), so the gate is pinned by checksum instead: the
+  # installer verifies the published SHA-256 of the archive on every run.
+  MOON_VERSION: latest
+
+jobs:
+  gate:
+    name: fmt + check + test (wasm, js) + build + artefacts
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install MoonBit (official installer, SHA-256 verified)
+        run: ./scripts/install-moonbit.sh "$MOON_VERSION"
+
+      - name: Put moon on PATH
+        run: echo "${MOON_HOME:-$HOME/.moon}/bin" >> "$GITHUB_PATH"
+
+      - name: Toolchain versions
+        run: |
+          moon version --all
+          {
+            echo "### MoonBit toolchain"
+            echo '```'
+            moon version --all
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Quality gate
+        run: ./scripts/verify.sh
+
+      - name: Committed artefacts match a fresh run
+        run: |
+          git status --porcelain
+          git diff --stat
+          git diff --exit-code
+
+      - name: Upload reports and traces
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reports-and-traces
+          if-no-files-found: error
+          path: |
+            docs/report.html
+            docs/report_langlands.html
+            docs/report_frontier.html
+            docs/report_universe.html
+            docs/report_correspondence.html
+            docs/report_octave.html
+            emergence_trace.csv
+            langlands_trace.csv
+            frontier_trace.csv
+            universe_trace.csv
+            hexad_trace.csv
+            correspondence_trace.csv
+            octave_trace.csv
+            jacobi_spectrum.csv
+            run_output.txt

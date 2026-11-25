@@ -1,0 +1,50 @@
+## P1 emergence 128x640
+agents: 128, steps: 640
+R(0)=0.047790366867499094 -> R(T)=0.9999593508720683
+nematic(0)=0.0642991576765398 -> nematic(T)=0.9998374096334817
+belief dispersion(0)=0.27559778897271003 -> (T)=3.35842855782309e-9
+concept dispersion(0)=0.21807743126257673 -> (T)=0.010310249283679657
+max Super-Jacobi defect = 1.7763568394002505e-15
+Connes distance = 1/K = 0.3125
+λ_2(L) = 0.00240908758965519, heat CFL dt = 0.7142857142857143
+orbit eigenvalues = [0.9999187048172407, 0.00008129518275923342]
+final Berezinian = 8128.857385246375
+
+## P2 langlands 128x640
+# langlands emergence / Eisenstein + Betti + ^G / MoonBit
+agents: 128, steps: 640, surface: genus 1 with 1 puncture(s)
+dim M_B(SL_2) = 2 (Poisson rank 2, one Casimir kappa)
+first row  : 0,4.57300863843102e-13,2.1871787901985336,2.1295633054691345,2.581360143586402e-9,0.6692708333333334,0,0,0.5972312644675927
+last row   : 640,0.9999999999999978,4.884981308350689e-15,0,8.901275767325982e-10,0,1,4.186800595107343e-8,0
+R(0) = 4.57300863843102e-13 -> R(T) = 0.9999999999999978, kappa spread 2.1871787901985336 -> 4.884981308350689e-15
+unipotent defect 0.6692708333333334 -> 0
+max |{kappa, H}| (Casimir certificate) = 4.186800595107343e-8
+max Jacobi defect over the whole run = 6.1241872944400866e-9
+Eisenstein projection defect (rank 2) = 0
+Eisenstein projection defect (rank 3) = 2.220446049250313e-16
+c-function functional-equation defect = 0
+CT-Eis defect (GL_4, type (2,2)) = 0
+unipotent orbit dim, type (2,2) = 8, ^G fixed algebra = 8, total = 16
+dim ker Theta (3,1) = 6, dim Cent(N) = 6, Ext^1 = 6
+nilpotent orbits in GL_6 = 11
+
+## P3 frontier 128x640
+# frontier-emergence / M^{4|32} Sparse + B_2 Adelic + SL_3 Oper + Reverse-AD
+agents: 128, steps: 640, supermanifold: B^4 x Lambda(32) (2^32 = 4,294,967,296 fibre dim)
+B^4 hyperbolic geodesic spread: 0.48623886413066947 -> 0
+trainable symbolic-neural encoder loss: 0.2814943319101153 -> 7.703719777548943e-33
+max |det Hol(SL_3 oper) - 1| = 2.1830821594903682e-9
+Satake IC Poincare P_{Gr_omega1}(1) on C_3 (Sp_6) = 6 == dim V_omega1 = 6
+Lusztig q-multiplicity K_{(2,1,0),(1,1,1)}(q=1) = 2 (adjoint sl_3 Cartan dim = 2), at q=2 -> 6
+
+## P4 universe steps=640
+# universe-emergence / Grothendieck ladder × Langlands × ℓ-adic diamonds
+steps: 640, universe levels: 4
+T35-T36 Grothendieck hierarchy: U_j ∈ U_{j+1}, U_j ∉ U_j, 5 closure axioms  -> ok
+T37-T38 reflection: parameter-relative β(Σ_1) = 3, β(Σ_2) = 3, conservativity defect = 0 (0 = sound)
+T39-T40 Langlands universe: stratification tight = ok, max excursion->parameter defect = 7.105427357601002e-15
+T41 Newton strata: 3 strata of Bun_{GL_2}, basic J_b = D^×
+T42 tilt: |T_d| = p^n at every depth, perfect on the char-p residue -> ok
+T43-T44 Div^1 & ℓ-smoothness: dualizing Λ(d)[2d], Verdier involution, Poincaré duality -> ok
+T45 geometric Satake: P_IC(Gr_ω1)(1) = dim V_ω1 = 2
+T46 reflection/duality square commutes: max defect = 1.4210854715202004e-14

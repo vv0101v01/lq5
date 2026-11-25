@@ -1,0 +1,653 @@
+{
+ "meta": {
+  "embedder": "LiquidAI/LFM2.5-Embedding-350M-GGUF (Q8_0)",
+  "gguf_sha256": "6ec5f8e8750dbc8a0e40c431fd1b7b07a13688136b2244c5a1364b54d9032599",
+  "server": "llama.cpp b12676 llama-server --embeddings",
+  "dim": 1024,
+  "agents": 128,
+  "int8_max_cosine_error": 0.001561573849165665,
+  "int8_knn8_agreement": 0.9970703125
+ },
+ "agents": [
+  {
+   "id": 0,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in multi-step task planning and decomposition."
+  },
+  {
+   "id": 1,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in Python programming and debugging."
+  },
+  {
+   "id": 2,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in algorithm design and complexity analysis."
+  },
+  {
+   "id": 3,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in data structures and graph algorithms."
+  },
+  {
+   "id": 4,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in SQL queries and database schema design."
+  },
+  {
+   "id": 5,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in JavaScript and TypeScript web development."
+  },
+  {
+   "id": 6,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in systems programming in C and Rust."
+  },
+  {
+   "id": 7,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in unit testing and test-driven development."
+  },
+  {
+   "id": 8,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in API tool calling with JSON arguments."
+  },
+  {
+   "id": 9,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in shell scripting and Linux command line."
+  },
+  {
+   "id": 10,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in classical mechanics and kinematics problems."
+  },
+  {
+   "id": 11,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in electromagnetism and circuits."
+  },
+  {
+   "id": 12,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in thermodynamics and statistical physics."
+  },
+  {
+   "id": 13,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in general chemistry and stoichiometry."
+  },
+  {
+   "id": 14,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in molecular biology and genetics."
+  },
+  {
+   "id": 15,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in numerical methods and floating point error."
+  },
+  {
+   "id": 16,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in linear algebra for machine learning."
+  },
+  {
+   "id": 17,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in probability and statistics for data analysis."
+  },
+  {
+   "id": 18,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in long document reading and summarisation."
+  },
+  {
+   "id": 19,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in scientific literature question answering."
+  },
+  {
+   "id": 20,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in code review and refactoring."
+  },
+  {
+   "id": 21,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in concurrency, locks and race conditions."
+  },
+  {
+   "id": 22,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in compiler construction and parsing."
+  },
+  {
+   "id": 23,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in functional programming and type systems."
+  },
+  {
+   "id": 24,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in MoonBit language syntax and tooling."
+  },
+  {
+   "id": 25,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in WebAssembly compilation targets."
+  },
+  {
+   "id": 26,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in software architecture and design patterns."
+  },
+  {
+   "id": 27,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in version control with git."
+  },
+  {
+   "id": 28,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in performance profiling and optimisation."
+  },
+  {
+   "id": 29,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in security vulnerabilities in code."
+  },
+  {
+   "id": 30,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in spreadsheet formulas and data cleaning."
+  },
+  {
+   "id": 31,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in unit conversion and dimensional analysis."
+  },
+  {
+   "id": 32,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in astronomy and orbital mechanics."
+  },
+  {
+   "id": 33,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in earth science and climate data."
+  },
+  {
+   "id": 34,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in economics and quantitative finance."
+  },
+  {
+   "id": 35,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in formal logic and puzzle solving."
+  },
+  {
+   "id": 36,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in agentic web search planning."
+  },
+  {
+   "id": 37,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in regular expressions and text processing."
+  },
+  {
+   "id": 38,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in numerical optimisation and gradient descent."
+  },
+  {
+   "id": 39,
+   "model": "K2-Horizon-0.9B",
+   "text": "document: A general reasoning, planning, coding and STEM expert agent (K2-Horizon-0.9B) specialised in operations research and scheduling."
+  },
+  {
+   "id": 40,
+   "model": "Limite-1B-Violetto",
+   "text": "document: A competition mathematics solver agent (Limite-1B-Violetto) specialised in olympiad number theory: divisibility and modular arithmetic."
+  },
+  {
+   "id": 41,
+   "model": "Limite-1B-Violetto",
+   "text": "document: A competition mathematics solver agent (Limite-1B-Violetto) specialised in Diophantine equations and integer solutions."
+  },
+  {
+   "id": 42,
+   "model": "Limite-1B-Violetto",
+   "text": "document: A competition mathematics solver agent (Limite-1B-Violetto) specialised in prime numbers and multiplicative functions."
+  },
+  {
+   "id": 43,
+   "model": "Limite-1B-Violetto",
+   "text": "document: A competition mathematics solver agent (Limite-1B-Violetto) specialised in Euclidean geometry: triangle centers and circles."
+  },
+  {
+   "id": 44,
+   "model": "Limite-1B-Violetto",
+   "text": "document: A competition mathematics solver agent (Limite-1B-Violetto) specialised in coordinate geometry and conic sections."
+  },
+  {
+   "id": 45,
+   "model": "Limite-1B-Violetto",
+   "text": "document: A competition mathematics solver agent (Limite-1B-Violetto) specialised in trigonometric identities and equations."
+  },
+  {
+   "id": 46,
+   "model": "Limite-1B-Violetto",
+   "text": "document: A competition mathematics solver agent (Limite-1B-Violetto) specialised in combinatorics: counting and bijections."
+  },
+  {
+   "id": 47,
+   "model": "Limite-1B-Violetto",
+   "text": "document: A competition mathematics solver agent (Limite-1B-Violetto) specialised in combinatorics: pigeonhole principle and extremal arguments."
+  },
+  {
+   "id": 48,
+   "model": "Limite-1B-Violetto",
+   "text": "document: A competition mathematics solver agent (Limite-1B-Violetto) specialised in graph theory competition problems."
+  },
+  {
+   "id": 49,
+   "model": "Limite-1B-Violetto",
+   "text": "document: A competition mathematics solver agent (Limite-1B-Violetto) specialised in probability puzzles and expected value."
+  },
+  {
+   "id": 50,
+   "model": "Limite-1B-Violetto",
+   "text": "document: A competition mathematics solver agent (Limite-1B-Violetto) specialised in polynomials: roots, Vieta formulas and factorisation."
+  },
+  {
+   "id": 51,
+   "model": "Limite-1B-Violetto",
+   "text": "document: A competition mathematics solver agent (Limite-1B-Violetto) specialised in functional equations."
+  },
+  {
+   "id": 52,
+   "model": "Limite-1B-Violetto",
+   "text": "document: A competition mathematics solver agent (Limite-1B-Violetto) specialised in inequalities: AM-GM, Cauchy-Schwarz and Jensen."
+  },
+  {
+   "id": 53,
+   "model": "Limite-1B-Violetto",
+   "text": "document: A competition mathematics solver agent (Limite-1B-Violetto) specialised in sequences, recurrences and generating functions."
+  },
+  {
+   "id": 54,
+   "model": "Limite-1B-Violetto",
+   "text": "document: A competition mathematics solver agent (Limite-1B-Violetto) specialised in complex numbers and roots of unity."
+  },
+  {
+   "id": 55,
+   "model": "Limite-1B-Violetto",
+   "text": "document: A competition mathematics solver agent (Limite-1B-Violetto) specialised in calculus: limits, derivatives and integrals."
+  },
+  {
+   "id": 56,
+   "model": "Limite-1B-Violetto",
+   "text": "document: A competition mathematics solver agent (Limite-1B-Violetto) specialised in series convergence and summation."
+  },
+  {
+   "id": 57,
+   "model": "Limite-1B-Violetto",
+   "text": "document: A competition mathematics solver agent (Limite-1B-Violetto) specialised in linear algebra: determinants and eigenvalues."
+  },
+  {
+   "id": 58,
+   "model": "Limite-1B-Violetto",
+   "text": "document: A competition mathematics solver agent (Limite-1B-Violetto) specialised in abstract algebra: groups and symmetry."
+  },
+  {
+   "id": 59,
+   "model": "Limite-1B-Violetto",
+   "text": "document: A competition mathematics solver agent (Limite-1B-Violetto) specialised in invariants and monovariants in games."
+  },
+  {
+   "id": 60,
+   "model": "Limite-1B-Violetto",
+   "text": "document: A competition mathematics solver agent (Limite-1B-Violetto) specialised in 3D solid geometry and volumes."
+  },
+  {
+   "id": 61,
+   "model": "Limite-1B-Violetto",
+   "text": "document: A competition mathematics solver agent (Limite-1B-Violetto) specialised in vectors and analytic geometry."
+  },
+  {
+   "id": 62,
+   "model": "Limite-1B-Violetto",
+   "text": "document: A competition mathematics solver agent (Limite-1B-Violetto) specialised in logarithms and exponential equations."
+  },
+  {
+   "id": 63,
+   "model": "Limite-1B-Violetto",
+   "text": "document: A competition mathematics solver agent (Limite-1B-Violetto) specialised in floor functions and digit problems."
+  },
+  {
+   "id": 64,
+   "model": "Limite-1B-Violetto",
+   "text": "document: A competition mathematics solver agent (Limite-1B-Violetto) specialised in AIME style short-answer problems."
+  },
+  {
+   "id": 65,
+   "model": "Limite-1B-Violetto",
+   "text": "document: A competition mathematics solver agent (Limite-1B-Violetto) specialised in HMMT style team round problems."
+  },
+  {
+   "id": 66,
+   "model": "Limite-1B-Violetto",
+   "text": "document: A competition mathematics solver agent (Limite-1B-Violetto) specialised in proof writing by induction."
+  },
+  {
+   "id": 67,
+   "model": "Limite-1B-Violetto",
+   "text": "document: A competition mathematics solver agent (Limite-1B-Violetto) specialised in proof by contradiction and infinite descent."
+  },
+  {
+   "id": 68,
+   "model": "Limite-1B-Violetto",
+   "text": "document: A competition mathematics solver agent (Limite-1B-Violetto) specialised in modular inverses and Chinese remainder theorem."
+  },
+  {
+   "id": 69,
+   "model": "Limite-1B-Violetto",
+   "text": "document: A competition mathematics solver agent (Limite-1B-Violetto) specialised in lattice points and Pick's theorem."
+  },
+  {
+   "id": 70,
+   "model": "Limite-1B-Violetto",
+   "text": "document: A competition mathematics solver agent (Limite-1B-Violetto) specialised in geometric transformations: rotation, reflection, homothety."
+  },
+  {
+   "id": 71,
+   "model": "Limite-1B-Violetto",
+   "text": "document: A competition mathematics solver agent (Limite-1B-Violetto) specialised in Zeta functions and Euler products."
+  },
+  {
+   "id": 72,
+   "model": "DeepSeek-R1-Distill-Qwen-1.5B",
+   "text": "document: A long chain-of-thought critic and verifier agent (DeepSeek-R1-Distill-Qwen-1.5B) specialised in check every arithmetic step for calculation errors."
+  },
+  {
+   "id": 73,
+   "model": "DeepSeek-R1-Distill-Qwen-1.5B",
+   "text": "document: A long chain-of-thought critic and verifier agent (DeepSeek-R1-Distill-Qwen-1.5B) specialised in verify the logical validity of each inference."
+  },
+  {
+   "id": 74,
+   "model": "DeepSeek-R1-Distill-Qwen-1.5B",
+   "text": "document: A long chain-of-thought critic and verifier agent (DeepSeek-R1-Distill-Qwen-1.5B) specialised in search for counterexamples to a claimed statement."
+  },
+  {
+   "id": 75,
+   "model": "DeepSeek-R1-Distill-Qwen-1.5B",
+   "text": "document: A long chain-of-thought critic and verifier agent (DeepSeek-R1-Distill-Qwen-1.5B) specialised in detect unjustified assumptions in a proof."
+  },
+  {
+   "id": 76,
+   "model": "DeepSeek-R1-Distill-Qwen-1.5B",
+   "text": "document: A long chain-of-thought critic and verifier agent (DeepSeek-R1-Distill-Qwen-1.5B) specialised in re-derive the final answer by an independent method."
+  },
+  {
+   "id": 77,
+   "model": "DeepSeek-R1-Distill-Qwen-1.5B",
+   "text": "document: A long chain-of-thought critic and verifier agent (DeepSeek-R1-Distill-Qwen-1.5B) specialised in check edge cases and boundary conditions."
+  },
+  {
+   "id": 78,
+   "model": "DeepSeek-R1-Distill-Qwen-1.5B",
+   "text": "document: A long chain-of-thought critic and verifier agent (DeepSeek-R1-Distill-Qwen-1.5B) specialised in verify units and orders of magnitude."
+  },
+  {
+   "id": 79,
+   "model": "DeepSeek-R1-Distill-Qwen-1.5B",
+   "text": "document: A long chain-of-thought critic and verifier agent (DeepSeek-R1-Distill-Qwen-1.5B) specialised in check code output by mentally executing it."
+  },
+  {
+   "id": 80,
+   "model": "DeepSeek-R1-Distill-Qwen-1.5B",
+   "text": "document: A long chain-of-thought critic and verifier agent (DeepSeek-R1-Distill-Qwen-1.5B) specialised in compare two conflicting solutions and decide which is correct."
+  },
+  {
+   "id": 81,
+   "model": "DeepSeek-R1-Distill-Qwen-1.5B",
+   "text": "document: A long chain-of-thought critic and verifier agent (DeepSeek-R1-Distill-Qwen-1.5B) specialised in identify circular reasoning."
+  },
+  {
+   "id": 82,
+   "model": "DeepSeek-R1-Distill-Qwen-1.5B",
+   "text": "document: A long chain-of-thought critic and verifier agent (DeepSeek-R1-Distill-Qwen-1.5B) specialised in check that all problem constraints are satisfied."
+  },
+  {
+   "id": 83,
+   "model": "DeepSeek-R1-Distill-Qwen-1.5B",
+   "text": "document: A long chain-of-thought critic and verifier agent (DeepSeek-R1-Distill-Qwen-1.5B) specialised in estimate the answer and test plausibility."
+  },
+  {
+   "id": 84,
+   "model": "DeepSeek-R1-Distill-Qwen-1.5B",
+   "text": "document: A long chain-of-thought critic and verifier agent (DeepSeek-R1-Distill-Qwen-1.5B) specialised in verify algebraic simplifications."
+  },
+  {
+   "id": 85,
+   "model": "DeepSeek-R1-Distill-Qwen-1.5B",
+   "text": "document: A long chain-of-thought critic and verifier agent (DeepSeek-R1-Distill-Qwen-1.5B) specialised in check probability calculations for double counting."
+  },
+  {
+   "id": 86,
+   "model": "DeepSeek-R1-Distill-Qwen-1.5B",
+   "text": "document: A long chain-of-thought critic and verifier agent (DeepSeek-R1-Distill-Qwen-1.5B) specialised in audit a chain of thought for skipped steps."
+  },
+  {
+   "id": 87,
+   "model": "DeepSeek-R1-Distill-Qwen-1.5B",
+   "text": "document: A long chain-of-thought critic and verifier agent (DeepSeek-R1-Distill-Qwen-1.5B) specialised in verify geometric constructions and diagrams."
+  },
+  {
+   "id": 88,
+   "model": "DeepSeek-R1-Distill-Qwen-1.5B",
+   "text": "document: A long chain-of-thought critic and verifier agent (DeepSeek-R1-Distill-Qwen-1.5B) specialised in detect hallucinated facts or citations."
+  },
+  {
+   "id": 89,
+   "model": "DeepSeek-R1-Distill-Qwen-1.5B",
+   "text": "document: A long chain-of-thought critic and verifier agent (DeepSeek-R1-Distill-Qwen-1.5B) specialised in check off-by-one errors in loops and indices."
+  },
+  {
+   "id": 90,
+   "model": "DeepSeek-R1-Distill-Qwen-1.5B",
+   "text": "document: A long chain-of-thought critic and verifier agent (DeepSeek-R1-Distill-Qwen-1.5B) specialised in critique the efficiency of an algorithm."
+  },
+  {
+   "id": 91,
+   "model": "DeepSeek-R1-Distill-Qwen-1.5B",
+   "text": "document: A long chain-of-thought critic and verifier agent (DeepSeek-R1-Distill-Qwen-1.5B) specialised in verify a formal definition is applied correctly."
+  },
+  {
+   "id": 92,
+   "model": "DeepSeek-R1-Distill-Qwen-1.5B",
+   "text": "document: A long chain-of-thought critic and verifier agent (DeepSeek-R1-Distill-Qwen-1.5B) specialised in arbitrate between a polarised group of answers."
+  },
+  {
+   "id": 93,
+   "model": "DeepSeek-R1-Distill-Qwen-1.5B",
+   "text": "document: A long chain-of-thought critic and verifier agent (DeepSeek-R1-Distill-Qwen-1.5B) specialised in summarise remaining doubts and open gaps."
+  },
+  {
+   "id": 94,
+   "model": "DeepSeek-R1-Distill-Qwen-1.5B",
+   "text": "document: A long chain-of-thought critic and verifier agent (DeepSeek-R1-Distill-Qwen-1.5B) specialised in rate the confidence of a final answer."
+  },
+  {
+   "id": 95,
+   "model": "DeepSeek-R1-Distill-Qwen-1.5B",
+   "text": "document: A long chain-of-thought critic and verifier agent (DeepSeek-R1-Distill-Qwen-1.5B) specialised in self-reflect and correct a previous mistake."
+  },
+  {
+   "id": 96,
+   "model": "Qwen3.5-0.8B",
+   "text": "document: A multilingual multimodal interface agent agent (Qwen3.5-0.8B) specialised in translate Cantonese user requests into precise English."
+  },
+  {
+   "id": 97,
+   "model": "Qwen3.5-0.8B",
+   "text": "document: A multilingual multimodal interface agent agent (Qwen3.5-0.8B) specialised in translate Traditional Chinese into English."
+  },
+  {
+   "id": 98,
+   "model": "Qwen3.5-0.8B",
+   "text": "document: A multilingual multimodal interface agent agent (Qwen3.5-0.8B) specialised in translate the final answer back into Cantonese."
+  },
+  {
+   "id": 99,
+   "model": "Qwen3.5-0.8B",
+   "text": "document: A multilingual multimodal interface agent agent (Qwen3.5-0.8B) specialised in write the final answer in Traditional Chinese."
+  },
+  {
+   "id": 100,
+   "model": "Qwen3.5-0.8B",
+   "text": "document: A multilingual multimodal interface agent agent (Qwen3.5-0.8B) specialised in parse an image or screenshot into text."
+  },
+  {
+   "id": 101,
+   "model": "Qwen3.5-0.8B",
+   "text": "document: A multilingual multimodal interface agent agent (Qwen3.5-0.8B) specialised in read a scanned document with OCR."
+  },
+  {
+   "id": 102,
+   "model": "Qwen3.5-0.8B",
+   "text": "document: A multilingual multimodal interface agent agent (Qwen3.5-0.8B) specialised in extract the user's intent and constraints."
+  },
+  {
+   "id": 103,
+   "model": "Qwen3.5-0.8B",
+   "text": "document: A multilingual multimodal interface agent agent (Qwen3.5-0.8B) specialised in split a request into subtasks."
+  },
+  {
+   "id": 104,
+   "model": "Qwen3.5-0.8B",
+   "text": "document: A multilingual multimodal interface agent agent (Qwen3.5-0.8B) specialised in detect the language and dialect of the input."
+  },
+  {
+   "id": 105,
+   "model": "Qwen3.5-0.8B",
+   "text": "document: A multilingual multimodal interface agent agent (Qwen3.5-0.8B) specialised in ask the user a clarifying question."
+  },
+  {
+   "id": 106,
+   "model": "Qwen3.5-0.8B",
+   "text": "document: A multilingual multimodal interface agent agent (Qwen3.5-0.8B) specialised in format the answer as markdown with tables."
+  },
+  {
+   "id": 107,
+   "model": "Qwen3.5-0.8B",
+   "text": "document: A multilingual multimodal interface agent agent (Qwen3.5-0.8B) specialised in call tools and format tool results."
+  },
+  {
+   "id": 108,
+   "model": "Qwen3.5-0.8B",
+   "text": "document: A multilingual multimodal interface agent agent (Qwen3.5-0.8B) specialised in summarise a long conversation history."
+  },
+  {
+   "id": 109,
+   "model": "Qwen3.5-0.8B",
+   "text": "document: A multilingual multimodal interface agent agent (Qwen3.5-0.8B) specialised in write friendly conversational replies."
+  },
+  {
+   "id": 110,
+   "model": "Qwen3.5-0.8B",
+   "text": "document: A multilingual multimodal interface agent agent (Qwen3.5-0.8B) specialised in explain a result to a non-expert."
+  },
+  {
+   "id": 111,
+   "model": "Qwen3.5-0.8B",
+   "text": "document: A multilingual multimodal interface agent agent (Qwen3.5-0.8B) specialised in render a short certificate summary for the user."
+  },
+  {
+   "id": 112,
+   "model": "LFM2.5-Embedding-350M",
+   "text": "document: A embedding, memory and routing agent agent (LFM2.5-Embedding-350M) specialised in retrieve relevant documents from long-term memory."
+  },
+  {
+   "id": 113,
+   "model": "LFM2.5-Embedding-350M",
+   "text": "document: A embedding, memory and routing agent agent (LFM2.5-Embedding-350M) specialised in store a verified result into memory."
+  },
+  {
+   "id": 114,
+   "model": "LFM2.5-Embedding-350M",
+   "text": "document: A embedding, memory and routing agent agent (LFM2.5-Embedding-350M) specialised in cluster candidate answers by semantic similarity."
+  },
+  {
+   "id": 115,
+   "model": "LFM2.5-Embedding-350M",
+   "text": "document: A embedding, memory and routing agent agent (LFM2.5-Embedding-350M) specialised in route a subtask to the best expert model."
+  },
+  {
+   "id": 116,
+   "model": "LFM2.5-Embedding-350M",
+   "text": "document: A embedding, memory and routing agent agent (LFM2.5-Embedding-350M) specialised in deduplicate near-identical candidate solutions."
+  },
+  {
+   "id": 117,
+   "model": "LFM2.5-Embedding-350M",
+   "text": "document: A embedding, memory and routing agent agent (LFM2.5-Embedding-350M) specialised in measure similarity between two agents' outputs."
+  },
+  {
+   "id": 118,
+   "model": "LFM2.5-Embedding-350M",
+   "text": "document: A embedding, memory and routing agent agent (LFM2.5-Embedding-350M) specialised in rank documents for a search query."
+  },
+  {
+   "id": 119,
+   "model": "LFM2.5-Embedding-350M",
+   "text": "document: A embedding, memory and routing agent agent (LFM2.5-Embedding-350M) specialised in detect topic drift in a conversation."
+  },
+  {
+   "id": 120,
+   "model": "LFM2.5-Embedding-350M",
+   "text": "document: A embedding, memory and routing agent agent (LFM2.5-Embedding-350M) specialised in build a nearest-neighbour graph of agents."
+  },
+  {
+   "id": 121,
+   "model": "LFM2.5-Embedding-350M",
+   "text": "document: A embedding, memory and routing agent agent (LFM2.5-Embedding-350M) specialised in cross-lingual retrieval across languages."
+  },
+  {
+   "id": 122,
+   "model": "LFM2.5-Embedding-350M",
+   "text": "document: A embedding, memory and routing agent agent (LFM2.5-Embedding-350M) specialised in find previously solved similar problems."
+  },
+  {
+   "id": 123,
+   "model": "LFM2.5-Embedding-350M",
+   "text": "document: A embedding, memory and routing agent agent (LFM2.5-Embedding-350M) specialised in estimate novelty of a new candidate."
+  },
+  {
+   "id": 124,
+   "model": "LFM2.5-Embedding-350M",
+   "text": "document: A embedding, memory and routing agent agent (LFM2.5-Embedding-350M) specialised in index code snippets for retrieval."
+  },
+  {
+   "id": 125,
+   "model": "LFM2.5-Embedding-350M",
+   "text": "document: A embedding, memory and routing agent agent (LFM2.5-Embedding-350M) specialised in index mathematical theorems for retrieval."
+  },
+  {
+   "id": 126,
+   "model": "LFM2.5-Embedding-350M",
+   "text": "document: A embedding, memory and routing agent agent (LFM2.5-Embedding-350M) specialised in match a question to a benchmark category."
+  },
+  {
+   "id": 127,
+   "model": "LFM2.5-Embedding-350M",
+   "text": "document: A embedding, memory and routing agent agent (LFM2.5-Embedding-350M) specialised in compress context into a dense vector."
+  }
+ ]
+}

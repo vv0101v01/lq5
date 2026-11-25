@@ -1,0 +1,10 @@
+rule,cycle,tokens,text,agreement,js,covered
+product,1,8,t40t40t21t21t8t40t55t40,0.0,1.0665,0.97
+product,2,8,t20t20t21t21t8t20t20t21,0.0,1.0665,0.97
+product,3,8,t7t20t20t7t40t20t54t20,0.0,1.0665,0.97
+mixture,1,8,t20t20t21t21t9t20t40t20,0.0,1.0665,0.97
+mixture,2,8,t9t9t40t21t9t9t9t21,0.0,1.0665,0.97
+mixture,3,8,t40t9t9t40t20t9t40t9,0.0,1.0665,0.97
+assisted,1,8,t21t21t9t21t9t21t21t21,0.0,1.0665,0.97
+assisted,2,8,t9t9t20t9t9t9t9t20,0.0,1.0665,0.97
+assisted,3,8,t20t9t9t20t21t9t20t9,0.0,1.0665,0.97
