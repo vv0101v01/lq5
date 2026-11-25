@@ -17,14 +17,12 @@ duality) which the pipeline verifies numerically at every step.
 """
 import os
 
-from reporthtml import MOON_TESTS, PALETTE, bar_chart, doc_path, line_chart, load, table, trace_path
+from reporthtml import MOON_TESTS, PALETTE, bar_chart
+from reporthtml import doc_path, line_chart, load
+from reporthtml import table, trace_path
 
 CSV_PATH = trace_path("universe_trace.csv")
 OUT_PATH = doc_path("report_universe.html")
-
-
-
-
 
 
 
@@ -153,7 +151,7 @@ def main():
 </head>
 <body><div class="wrap">
 <h1>Round 4：宇宙、反射、朗蘭茲與 ℓ-進光滑層</h1>
-<div class="sub">MoonBit 0.10.22 (<code>moonc v0.10.22+124d61d05</code>) · {MOON_TESTS} inline tests (whole gate)（wasm + js 全綠，0 warnings，0 死碼） · 由 <code>scripts/make_report_universe.py</code> 生成</div>
+<div class="sub">MoonBit 0.10.22 (<code>moonc v0.10.22+124d61d05</code>) · {MOON_TESTS}/{MOON_TESTS} tests（wasm + js）（wasm + js 全綠，0 warnings，0 死碼） · 由 <code>scripts/make_report_universe.py</code> 生成</div>
 
 <div class="cards">
   <div class="card"><div class="k">Σ_n 反射界 β</div><div class="v">{int(max(beta))} &lt; α = 4</div>

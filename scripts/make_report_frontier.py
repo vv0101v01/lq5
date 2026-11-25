@@ -7,14 +7,12 @@ network dependencies so it renders cleanly in sandboxed previews.
 """
 import os
 
-from reporthtml import MOON_TESTS, PALETTE, bar_chart, doc_path, line_chart, load, table, trace_path
+from reporthtml import MOON_TESTS, PALETTE, bar_chart
+from reporthtml import doc_path, line_chart, load
+from reporthtml import table, trace_path
 
 CSV_PATH = trace_path("frontier_trace.csv")
 OUT_PATH = doc_path("report_frontier.html")
-
-
-
-
 
 
 
@@ -113,7 +111,7 @@ def main():
 </head>
 <body><div class="wrap">
 <h1>前沿擴充總覽：稀疏超流形 M<sup>m|64</sup> · Adelic B<sub>n</sub>/C<sub>n</sub> · Ĝ-Opers · 非阿貝爾 Hodge · 可微符號–神經 Satake</h1>
-<div class="sub">MoonBit 0.10.22 (<code>moonc v0.10.22+124d61d05</code>) · {MOON_TESTS} inline tests (whole gate) (wasm + js 全綠, 0 warnings) · 由 <code>scripts/make_report_frontier.py</code> 生成</div>
+<div class="sub">MoonBit 0.10.22 (<code>moonc v0.10.22+124d61d05</code>) · {MOON_TESTS}/{MOON_TESTS} tests (wasm + js) (wasm + js 全綠, 0 warnings) · 由 <code>scripts/make_report_frontier.py</code> 生成</div>
 
 <div class="cards">
   <div class="card"><div class="k">Grassmann 容量擴充</div><div class="v">Λ(64)</div>

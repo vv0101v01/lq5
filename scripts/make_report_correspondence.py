@@ -25,10 +25,6 @@ OUT_PATH = doc_path("report_correspondence.html")
 
 
 
-
-
-
-
 def main():
     cols = load(CSV_PATH)
     steps = [int(s) for s in cols["step"]]

@@ -17,9 +17,6 @@ OUT_PATH = doc_path("report_langlands.html")
 
 
 
-
-
-
 def heatmap(matrix, labels, width=420, height=300, title="", vmax=None):
     n = len(matrix)
     pad = 46
