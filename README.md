@@ -1,14 +1,15 @@
 # 類智能體湧現的超幾何抽象 · MoonBit 0.10
 
 [![gate](https://github.com/vv0101v01/frame1/actions/workflows/ci.yml/badge.svg)](https://github.com/vv0101v01/frame1/actions/workflows/ci.yml)
-[![tests](https://img.shields.io/badge/tests-113%2F113%20wasm%20%2B%20113%2F113%20js-brightgreen)](#2-品質閘門全部通過一條指令)
+[![tests](https://img.shields.io/badge/tests-146%2F146%20wasm%20%2B%20146%2F146%20js-brightgreen)](#2-品質閘門全部通過一條指令)
 [![HF Space](https://img.shields.io/badge/%F0%9F%A4%97%20Space-frame1--hexad-yellow)](https://huggingface.co/spaces/Transynergy/frame1-hexad)
 [![MoonBit](https://img.shields.io/badge/MoonBit-0.10.22-1f6feb)](https://www.moonbitlang.com/download)
 
 以 **數學結構 ⟶ 計算機抽象 ⟶ 資料型別 ⟶ 可執行定律 ⟶ 定理 ⟶ 演算法** 的順序，把下列數學名詞實作成一個可編譯、可測試、可執行的 MoonBit 專案，並把抽象過程中浮現的定理與演算法整理在 [`docs/THEORY.md`](docs/THEORY.md)（第一輪，T1–T15 / A1–A12）、[`docs/LANGLANDS.md`](docs/LANGLANDS.md)（第二輪，T16–T24 / A13–A20）、[`docs/FRONTIER.md`](docs/FRONTIER.md)（第三輪前沿擴充與限制消除，T25–T34 / A21–A28）、
 [`docs/UNIVERSE.md`](docs/UNIVERSE.md)（第四輪，T35–T46 / A29–A37）、`docs/HEXAD_6IN1_PLAN.md`（第五輪，T47–T48）
 、[`docs/CORRESPONDENCE.md`](docs/CORRESPONDENCE.md)（第六輪對應湧現，T49–T68 / A40–A52）
-與 [`docs/OCTAVE.md`](docs/OCTAVE.md)（第七輪十通道，T69–T80 / A53–A64）。
+與 [`docs/OCTAVE.md`](docs/OCTAVE.md)（第七輪十通道，T69–T80 / A53–A64）、
+[`docs/DEFERRED.md`](docs/DEFERRED.md)（第九輪三項 deferred 交付，T84–T94 / A68–A73）。
 
 **第一輪（超幾何）**
 > 龐加萊–黎曼超流形 $\mathcal{M}^{m|n}$ · 仿射張量空間 · PoPE 位置編碼 · 非交換幾何與超矩陣方程 · 偏微分演化流 · 超雅可比恆等式 · 二階超質量張量軌道空間 · 符號–神經合一算子 · 自然梯度與費雪資訊度量
@@ -68,9 +69,9 @@ moon version --all
 | --- | --- |
 | `moon fmt --check` | no work to do |
 | `moon check --deny-warn` | 通過（0 warning） |
-| `moon test --target wasm --deny-warn` | `Total tests: 129, passed: 129, failed: 0` |
-| `moon test --target js --deny-warn` | `Total tests: 129, passed: 129, failed: 0` |
-| 死碼掃描 | 見下方「第七輪」一節（新增定義全部有引用） |
+| `moon test --target wasm --deny-warn` | `Total tests: 146, passed: 146, failed: 0` |
+| `moon test --target js --deny-warn` | `Total tests: 146, passed: 146, failed: 0` |
+| 死碼掃描 | 見下方「第九輪」一節（新增定義全部有引用） |
 
 同一條閘門在 CI 上跑：[`.github/workflows/ci.yml`](.github/workflows/ci.yml)
 （`ubuntu-latest`，用官方安裝器裝 MoonBit 並驗 SHA-256，跑 `scripts/verify.sh`，
@@ -135,6 +136,9 @@ moonbit-superagent/
 │   ├── 37_quintic_mirror_periods.mbt        # 第七輪：五次 PF 算子、整性鏡像映射、瞬子數（T78-T80 / A62-A64）
 │   ├── 38_octave_emergence.mbt              # 第七輪：十通道耦合管線（T69-T80 綜合）
 │   ├── 39_shared_vocab_fusion.mbt           # 同詞表 token 融合的三條律（T81-T83 / A65-A67）
+│   ├── 40_sixj_biedenharn.mbt               # 第九輪：一般 6j 閉式、Biedenharn–Elliott、Racah 正交（T84-T87 / A68-A70）
+│   ├── 41_jones_window_scaling.mbt          # 第九輪：|V(−1)| 視窗伸縮律、視窗無關 T(2,n) Jones（T88-T91 / A71-A72）
+│   ├── 42_cross_vocab_alignment.mbt         # 第九輪：跨詞表對齊融合 A73（T92-T94）
 │   ├── 33_correspondence_emergence.mbt      # 第六輪：耦合總管線 run_correspondence_emergence
 │   └── cmd/main/                            # 可執行範例（七條管線，尾聲輸出 hexad CSV）
 ├── docs/
@@ -145,7 +149,8 @@ moonbit-superagent/
 │   ├── CORRESPONDENCE.md         # 第六輪：定理 T49–T68、演算法 A40–A52
 │   ├── OCTAVE.md                 # 第七輪：定理 T69–T80、演算法 A53–A64
 │   ├── FUSION.md                 # 同詞表融合：T81–T83 / A65–A67、兩份實作的驗證、誠實邊界
-│   ├── HEXAD_6IN1_PLAN.md        # 第五輪：五模型「6 合 1」計劃、融合、單模型路線、HF Space（§1–14）
+│   ├── DEFERRED.md               # 第九輪：三項 deferred 交付 T84–T94 / A68–A73、證書與誠實邊界
+│   ├── HEXAD_6IN1_PLAN.md        # 第五輪：五模型「6 合 1」計劃、融合、單模型路線、HF Space、逐模型對合併設計（§1–15）
 │   ├── HEXAD_BASELINE_128x640.txt# 第五輪：128×640 骨架基線
 │   ├── HEXAD_VOCAB_OVERLAP.txt   # 第五輪：五個 tokenizer 詞表重疊 / 同 span 率
 │   ├── MOONBIT_0_10_SYNTAX.md    # 最新語法核查筆記（含 0.10.22 硬體位元與 SortedMap 特性）
@@ -447,3 +452,34 @@ Kottwitz 強乘積律僅對奇 d 成立、Clausen 傅立葉和不能以「項小
 * **本輪實測**：`bash scripts/verify.sh` → `==> OK`（fmt 乾淨、`check --deny-warn` 零警告、
   wasm 與 js 各 **135/135**、`_build/wasm/.../main.wasm`、七條管線、六份報告、
   MoonBit **837 個定義 0 死碼**、Python **184 個定義 0 死碼 / 0 未用 import**）。
+
+## 17. 第九輪：三項 deferred 交付（T84–T94 / A68–A73）
+
+三個此前明確留待下一輪的項目一次交付（完整證書與誠實邊界見 [`docs/DEFERRED.md`](docs/DEFERRED.md)）：
+
+* **一般 6j 的 Biedenharn–Elliott 遞歸**（`src/40_sixj_biedenharn.mbt`，T84–T87 / A68–A70）：
+  加倍標籤（`Int32 k` 表示自旋 `k/2`）上的 Racah 閉式——與 sympy `wigner_6j` 在 5⁶ 網格
+  max |err| = **1.11e-16**（sympy 內部兩相位恰相消，故閉式無外乘相位）；
+  24 個四面體對稱全體不變（4⁶ × 24 = 98,304 次比較）、
+  Biedenharn–Elliott 求和規則（5⁹ 範圍篩出 **11,448** 個前提合格配置，worst 1.67e-16）、
+  Racah 正交（**590** 配置，worst 4.44e-16）。
+* **|V(−1)| 行列式定律的視窗伸縮律**（`src/41_jones_window_scaling.mbt`，T88–T91 / A71–A72）：
+  視窗參數化的 `Lz2` + TL_2 乘法丟項計數，解析跨度 `spanN = (−6n+2, −2n+2)` ⇒
+  `t2_window_bound(n) = 6n−2` 之下**零丟項**（T88，`n = 2..41`）；
+  奇數 `n ≤ 61` 行等式 `|V(−1)| = n` 全過、`off = bound−1` 恰差一項即破（T89）；
+  反面教材 T90 釘死模組 34 固定 ±96 視窗的壞值
+  （`n=17 → (2,16)`、`19 → (1,−15)`、`21 → (2,14)`、`25 → (2,12)`、`31 → (1,−9)`，
+  **lattice defect 全為 0**——截斷對 lattice 檢測隱形，只有行等式本身能發現）；
+  T91 三路交叉：`n ≤ 15` 與模組 34 逐項相等、`k = 8..15` 與 skein 遞歸逐項相等。
+* **跨詞表 L3 對齊融合**（`src/42_cross_vocab_alignment.mbt`，T92–T94 / A73）：
+  `α` 混合共享候選 + 前綴相容兜底 + `min − margin` floor（**無硬否決**，對比 T81 的交集語義）；
+  T92 同詞表精確歸約到 `fuse_product`（≤ 1e-15）、T93 swap 反變（`α=0.5` raw 精確相等）、
+  T94 兜底 / floor 精確值與無否決。
+
+另附設計文檔 `docs/HEXAD_6IN1_PLAN.md` **§15 逐模型對 sparse 權重合併**
+（可行性矩陣 + 方法分層；沙盒沒有 GPU / 權重，未執行任何合併——
+交集數字全部來自 `docs/HEXAD_VOCAB_OVERLAP.txt` 的靜態量度）。
+
+* **本輪實測**：`bash scripts/verify.sh` → `==> OK`（fmt 乾淨、`check --deny-warn` 零警告、
+  wasm 與 js 各 **146/146**、`_build/wasm/.../main.wasm`、七條管線、六份報告、
+  MoonBit **867 個定義 0 死碼**、Python **184 個定義 0 死碼 / 0 未用 import**）。

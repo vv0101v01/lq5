@@ -21,9 +21,15 @@ pub fn affine_map(Array[Double], Array[Double], Array[Double], Int32) -> Array[D
 
 pub fn algebraic_connectivity(Int32) -> Double
 
+pub fn align_fuse(Array[(String, Double)], Array[(String, Double)], Double, Double) -> Array[(String, Double)]
+
+pub fn align_scores(Array[(String, Double)], Array[(String, Double)], Double, Double) -> Array[(String, Double)]
+
 pub fn approx(Double, Double, tol? : Double) -> Bool
 
 pub fn archimedean_c_factor(Cx) -> Cx
+
+pub fn be_defect(Int32, Int32, Int32, Int32, Int32, Int32, Int32, Int32, Int32) -> Double
 
 pub fn beck_chevalley_defect(Cnx, SpanDatum) -> Int32
 
@@ -567,6 +573,8 @@ pub fn jm_triple(Array[Int32]) -> Array[Array[Double]]
 
 pub fn jones_polynomial(Int32, Array[(Int32, Int32)]) -> (Lz, Int32)
 
+pub fn jones_t2_scaled(Int32, Int32) -> (Lz2, Int32, Int32)
+
 pub fn jones_torus2_defect(Int32) -> Int32
 
 pub fn jones_torus2_skein(Int32) -> Lz
@@ -644,6 +652,24 @@ pub fn lisse_rep_correspondence(Int32, Int32) -> Bool
 pub fn local_langlands_pointcount_defect() -> Int32
 
 pub fn lusztig_q_multiplicity_a2(Array[Int32], Array[Int32], Double) -> Double
+
+pub fn lz2_add(Lz2, Lz2) -> Lz2
+
+pub fn lz2_coeff(Lz2, Int32) -> Int32
+
+pub fn lz2_eval_minus_one(Lz2) -> Int32
+
+pub fn lz2_eval_one(Lz2) -> Int32
+
+pub fn lz2_mono(Int32, Int32, Int32) -> Lz2
+
+pub fn lz2_mul(Lz2, Lz2) -> (Lz2, Int32)
+
+pub fn lz2_span(Lz2) -> (Int32, Int32)
+
+pub fn lz2_to_t(Lz2) -> (Lz2, Int32)
+
+pub fn lz2_zero(Int32) -> Lz2
 
 pub fn lz_add(Lz, Lz) -> Lz
 
@@ -778,6 +804,8 @@ pub fn orbit_distance(SuperMassTensor, SuperMassTensor) -> Double
 pub fn order_harmonic(Array[Double], Int32) -> Double
 
 pub fn order_parameter(Array[Double]) -> Double
+
+pub fn ortho_defect(Int32, Int32, Int32, Int32, Int32, Int32) -> Double
 
 pub fn padic_c_factor(Int32, Cx) -> Cx
 
@@ -1011,6 +1039,8 @@ pub fn sigma_level(Formula) -> (Int32, Int32)
 
 pub fn simple_roots(RootType) -> Array[Array[Double]]
 
+pub fn sixj(Int32, Int32, Int32, Int32, Int32, Int32) -> Double
+
 pub fn size_level(Cardinal) -> Int32
 
 pub fn softplus(Double) -> Double
@@ -1036,6 +1066,12 @@ pub fn sylvester_sigma(SuperMatrix, Int32) -> Double
 pub fn sym_eigenvalues(Array[Double], Int32, sweeps? : Int32) -> Array[Double]
 
 pub fn symplectic_form(Int32) -> Array[Double]
+
+pub fn t2_bracket(Int32, Int32) -> (Lz2, Int32)
+
+pub fn t2_norm(Int32, Int32) -> (Lz2, Int32)
+
+pub fn t2_window_bound(Int32) -> Int32
 
 pub fn tanh_act(Double) -> Double
 
@@ -1509,6 +1545,11 @@ pub fn LegendrePoPE::eval(Self, Int32) -> Double
 pub impl PosKernel for LegendrePoPE
 
 pub(all) struct Lz {
+  e : Array[Int32]
+}
+
+pub(all) struct Lz2 {
+  off : Int32
   e : Array[Int32]
 }
 

@@ -580,3 +580,53 @@ K2（64,000 BPE）同 R1（151,643 BPE）**唔同詞表**，所以唔可以直�
 - 融合加速：兩個模型分開 CUDA stream 跑；或者用 AoTI 編譯 Limite decode。
 - 4 GB 真機對照：T4 small 開 1 小時（約 $0.40），量 K2 Q4_K_M + R1 Q8_0 嘅實際速度。
 - 學生 embedding head（§13.1）訓練完之後放上 Space，同 LFM 並排比較 8-NN 一致率。
+
+---
+
+## 15. 第九版設計文檔：逐模型對 sparse 權重合併（2026-11-26，設計、未執行）
+
+§12.2 判咗「cross-teacher 權重合併 ❌」（四個 teacher 嘅形狀
+1280×48 / 1536×28 / 1536×28 / 1024×24，Limite / R1 / K2 / Qwen3.5
+逐對都唔啱位）、但「同基座 expert LoRA ✅」。本節把剩低嘅問題
+——**邊個模型對、用邊層方法**——收成一張可行性矩陣 + 方法分層。
+呢份係設計文檔（按第八輪後嘅決策），唔含可執行定理；
+對齊後點融合嘅定律喺 [`DEFERRED.md`](DEFERRED.md) 第 3 節（T92–T94 / A73）。
+
+### 15.1 逐模型對可行性矩陣
+
+| 模型對 | 權重直併 | 可行方法 | 依據 |
+|---|---|---|---|
+| R1 ⊕ Limite | ❌（且詞表 151,643 **id 全同**，唔需要對齊） | output-KD / token-KD：兩個 teacher 對同一學生（R1-1.5B，§12.3）做軟目標 | 詞表逐位相同，融合只係分佈層面 |
+| R1 ⊕ Qwen2.5-Coder | ❌ **W′ 高危**：rope base 1e6 vs 1e4、tie-breaking 規則不同 | 只做 output-KD；任何「搬 embedding/attention 欄位」嘅做法都唔接受 | 結構超參唔相容，搬咗會靜默壞 |
+| K2 ⊕ R1 | ❌ 跨詞表 | **byte-align（§11.1 A40）**：交集 K2∩R1 = 42,986 token | `HEXAD_VOCAB_OVERLAP.txt` 實測 |
+| K2 ⊕ Qwen3.5 | ❌ 跨詞表 | byte-align：K2∩Qwen3.5 = 50,932 | 同上 |
+| R1 ⊕ Qwen3.5 | ❌ 跨詞表 | byte-align：R1∩Qwen3.5 = 131,586（最大交集） | 同上 |
+| LFM ⊕ 任何 | ❌ 佢唔係 decoder 權重 | 只有 **圖 / 向量** 層面：k-NN 圖拉普拉斯（A39）、向量蒸餾（§13.1） | LFM 係 embedding 模型，冇 transformer 欄位可合 |
+
+「邊個對都係 ❌ 直併」唔等於「乜都做唔到」：**權重層嘅正路係
+同基座 expert 合併**——所有 teacher 先對齊到同一學生基座
+（R1-1.5B，vocab 151,643）嘅 LoRA expert，再喺 expert 層做
+TIES（trim 符號衝突、elect、merge）或 DARE（drop 0.5、
+rescale `1/(1−p)`）。呢條路 §12.2 已判 ✅，本節只補「邊對 teacher
+值得做」嘅排序：交集大嘅對（R1⊕Qwen3.5 131,586）byte-align 收益最高；
+id 全同嘅對（R1⊕Limite）連對齊都唔使，直接 output-KD。
+
+### 15.2 方法分層（由平貴到貴）
+
+1. **output-KD / token-KD**（零結構風險）：只動軟目標，
+   適用所有矩陣行；成本係每個 teacher 一次前向。
+2. **byte-align token 級融合（A40，§11.1）**：跨詞表對先做，
+   交集 token 上 logit 凸組合；對齊律嘅融合層見 DEFERRED.md T92–T94。
+3. **同基座 expert LoRA + TIES/DARE**：唯一可以「減疊項」嘅權重層做法
+   （§12.2 解讀二）；必須同一學生基座，唔同基座一律唔做。
+4. **LFM 圖 / 向量**：獨立通道，唔與上面三層混。
+
+### 15.3 誠實邊界
+
+* 沙盒**冇 GPU、冇權重**：本節係設計文檔，一個 merge 都冇執行過；
+  所有交集數字來自 [`HEXAD_VOCAB_OVERLAP.txt`](HEXAD_VOCAB_OVERLAP.txt) 嘅靜態量度，
+  形狀 / rope / tie 診斷來自各 model card。
+* A40 只喺 §11.1 實測過對齊度（K2⊕R1）；其餘對嘅 byte-align 係
+  同一演算法、未跑過端到端。
+* TIES/DARE 參數（drop 0.5、rescale `1/(1−p)`）係文獻預設，
+  未喺本專案嘅任何模型上調過。
