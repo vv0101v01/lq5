@@ -188,6 +188,7 @@ moonrun 0.1.20261119 (738607b 2026-11-19)   /tmp/mb/moon_home/bin/moonrun
 |---|---|---|
 | `Value sqrt not found in package math` | `@math.sqrt` / `@math.abs` 不是函數 | `x.sqrt()`、`x.abs()`（方法形式） |
 | `Warning (deprecated): Use PI instead` | `@math.pi()` 已棄用 | `@math.PI` |
+| `Warning (deprecated): starts_with is deprecated` | `String::starts_with` 已棄用 | `a.has_prefix(b)` |
 | `Parse error, unexpected token *`（跨行算式） | 0.10 不允許在行尾斷開二元運算 | 收成一行，或先算中間變數 |
 | `Parse error, unexpected token id`（`1e-12`） | 浮點字面量需有小數點 | `1.0e-12` |
 | `Error Warning (unused_mut)` | 只改內容（`a[i] = ...`、`push`）的陣列不需要 `mut` | 去掉 `let mut` |

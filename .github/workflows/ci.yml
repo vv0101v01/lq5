@@ -1,7 +1,7 @@
 name: gate
 
 # The whole quality gate in one job: formatting, warnings-as-errors type
-# checking, the 135-test suite on both backends (wasm and js), the executable
+# checking, the 146-test suite on both backends (wasm and js), the executable
 # (seven pipelines, incl. the Hexad ring-vs-LFM-k-NN comparison and the
 # Round-7 ten-channel run), the exported CSV traces, all six HTML reports, the
 # MoonBit dead-code scan and the Python dead-code / unused-import scan.
@@ -11,7 +11,7 @@ name: gate
 # means a numeric result drifted, or the toolchain moved under us.  The report
 # header stamps the compiler it was generated with, so a failure after a new
 # MoonBit release names the new compiler in the diff itself — regenerate with
-# `./scripts/verify.sh` and commit the five changed files.
+# `./scripts/verify.sh` and commit the changed files.
 #
 # No secrets, no network beyond the MoonBit installer checksum, no pip install:
 # every script is pure Python 3 stdlib.

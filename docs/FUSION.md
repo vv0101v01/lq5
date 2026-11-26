@@ -50,7 +50,7 @@ assisted (speculative)  p ∝ [p_s − p_w]_+ + p_w
 |---|---|---|---|
 | Python（GPU 端） | `space/fusion.py` | `python3 space/test_fusion.py` | **13/13 通過**（CPU，假 tokenizer + 假模型，無需下載權重） |
 | Python 冒煙 | `space/demo_fusion_cpu.py` | 三個合成分佈走完 `run_cycles(3)`，輸出 `space/fusion_demo.csv` | 通過（**數字是合成的**，只證明管線／診斷正確） |
-| MoonBit（認證端） | `src/39_shared_vocab_fusion.mbt` | `moon test --target wasm|js` | **135/135 通過**（兩 target），`moon fmt --check` 乾淨 |
+| MoonBit（認證端） | `src/39_shared_vocab_fusion.mbt` | `moon test --target wasm|js` | **146/146 通過**（兩 target，含 T81–T83），`moon fmt --check` 乾淨 |
 
 MoonBit 端刻意用 `Array[Double]` + 手寫 `log_softmax`，不碰 GPU：**數值律與模型伺服器解耦**，
 所以 GPU 側的融合只要有疑問，跑一句 `moon test` 就知道是律錯還是接線錯。

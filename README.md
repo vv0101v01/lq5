@@ -1,6 +1,6 @@
 # 類智能體湧現的超幾何抽象 · MoonBit 0.10
 
-[![gate](https://github.com/vv0101v01/frame1/actions/workflows/ci.yml/badge.svg)](https://github.com/vv0101v01/frame1/actions/workflows/ci.yml)
+[![gate](https://github.com/vv0101v01/lq5/actions/workflows/ci.yml/badge.svg)](https://github.com/vv0101v01/lq5/actions/workflows/ci.yml)
 [![tests](https://img.shields.io/badge/tests-146%2F146%20wasm%20%2B%20146%2F146%20js-brightgreen)](#2-品質閘門全部通過一條指令)
 [![HF Space](https://img.shields.io/badge/%F0%9F%A4%97%20Space-frame1--hexad-yellow)](https://huggingface.co/spaces/Transynergy/frame1-hexad)
 [![MoonBit](https://img.shields.io/badge/MoonBit-0.10.22-1f6feb)](https://www.moonbitlang.com/download)
@@ -483,3 +483,23 @@ Kottwitz 強乘積律僅對奇 d 成立、Clausen 傅立葉和不能以「項小
 * **本輪實測**：`bash scripts/verify.sh` → `==> OK`（fmt 乾淨、`check --deny-warn` 零警告、
   wasm 與 js 各 **146/146**、`_build/wasm/.../main.wasm`、七條管線、六份報告、
   MoonBit **867 個定義 0 死碼**、Python **184 個定義 0 死碼 / 0 未用 import**）。
+
+## 18. 第十輪：L3 蒸餾設計文檔 + 減債（推送紀錄）
+
+* **蒸餾（設計、未執行）**：[`docs/HEXAD_6IN1_PLAN.md`](docs/HEXAD_6IN1_PLAN.md) **§16（第七版）**
+  ——L3 蒸餾執行計劃收攏 §5.4 / §8-M7 / §12.3 / §13.1 / §15 五處材料：
+  學生 R1-1.5B 三條通道（τ²·KL token-KD 主力 ／ 1536→1024 向量頭三段損失
+  ／ 異詞表 expert LoRA + TIES/DARE）、資料過濾器（ℓ≥2 分級反射 + 圖拉普拉斯共識降權）、
+  驗收憑證（8-NN ≥ 0.90 與 λ₂ ≤ 10% 已釘；KL 單調、5% 合併回落為設計值）。
+  沙盒沒有 GPU / 權重，**零訓練步**——與 §15 同為設計文檔。
+* **除錯**：`src/34` 的 `Lz` 視窗註解 `[−64, 63]` 與實作不符（`LZ_OFF = 96` ⇒ `[−96, 95]`）已改；
+  `ci.yml` 註解 `135-test suite` → `146-test`、`five changed files` → `changed files`。
+* **減債**：[`docs/FUSION.md`](docs/FUSION.md) 認證行 `135/135` → `146/146`；
+  README gate 徽章 `frame1` → `lq5`（CI 已在本倉庫跑）；
+  [`docs/MOONBIT_0_10_SYNTAX.md`](docs/MOONBIT_0_10_SYNTAX.md) 補 `starts_with` → `has_prefix` 棄用陷阱；
+  HEXAD §15 版本號「第九版」→「第六版」（接 §14 第五版）；
+  `scripts/*.sh` 快照丟失嘅 executable bit 復原（CI 依賴 `./scripts/verify.sh`，隨第九輪 commit 入庫）。
+* **清死碼**：`python3 scripts/dead_code_scan.py` → **0 死碼**（MoonBit 867 個定義、Python 184 個）——
+  第八輪之後無新增死碼，掃描本身即係憑證。
+* **推送**：`GITHUB_PAT=… ./scripts/push.sh`（token 只入一次性 push URL，不入 `.git/config`、不入檔案）
+  → GitHub Actions `gate` 跑同一條 `verify.sh` + `git diff --exit-code`（衍生 artefact 逐位一致才算綠）。

@@ -49,7 +49,7 @@
 // ---------------------------------------------------------------------------
 
 ///|
-/// Laurent polynomial `Σ c_e A^e` with `e ∈ [−64, 63]`, stored densely.
+/// Laurent polynomial `Σ c_e A^e` with `e ∈ [−96, 95]`, stored densely.
 pub(all) struct Lz {
   e : Array[Int32]
 }
